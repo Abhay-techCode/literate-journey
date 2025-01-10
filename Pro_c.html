@@ -1,0 +1,147 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Abhay Login Page</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" name="studentName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" placeholder="Enter your student ID" required>
+            </div>
+            <div class="form-group">
+                <label for="collegeName">College Name:</label>
+                <input type="text" id="collegeName" name="collegeName" placeholder="Enter your college name" required>
+            </div>
+            <div class="form-group">
+                <label for="studentImage">Upload Student Image:</label>
+                <input type="file" id="studentImage" name="studentImage" accept="image/*" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output" class="hidden">
+            <h2>Welcome to Abhay Friendship List</h2>
+            <div id="studentDetails"></div>
+            <p class="thank-you">Thank You!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html><style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.login-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+#studentDetails {
+    margin-top: 20px;
+    text-align: left;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.thank-you {
+    margin-top: 20px;
+    color: #555;
+    font-size: 18px;
+    font-weight: bold;
+}</style><script>document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const studentName = document.getElementById('studentName').value;
+    const studentId = document.getElementById('studentId').value;
+    const collegeName = document.getElementById('collegeName').value;
+    const studentImage = document.getElementById('studentImage').files[0];
+
+    if (studentImage) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const studentDetails = `
+                <p><strong>Name:</strong> ${studentName}</p>
+                <p><strong>ID:</strong> ${studentId}</p>
+                <p><strong>College:</strong> ${collegeName}</p>
+                <img src="${e.target.result}" alt="Student Image">
+            `;
+            document.getElementById('studentDetails').innerHTML = studentDetails;
+
+            // Show the welcome message and thank you note
+            document.getElementById('output').classList.remove('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+        };
+        reader.readAsDataURL(studentImage);
+    } else {
+        alert('Please upload an image.');
+    }
+});</script>
