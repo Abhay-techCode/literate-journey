@@ -1,0 +1,148 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhay Patil - Frontend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+<style>
+img{
+  border-radius:50%;
+}
+
+</style>
+
+
+
+</head>
+<body>
+<marquee><h2>Welcome,To <b>Abhay Patil CV</b></h2></marquee>
+  <div class="container">
+    <header>
+      <a href="https://ibb.co/Q36G105c"><img src="https://i.ibb.co/sdFrM7BP/IMG-20250201-073348-069.webp" alt="IMG-20250201-073348-069" border="0" width="100" height="100"></a>
+      <h1>Abhay Patil</h1>
+      <p>Frontend Developer | Software Engineer</p>
+      <button onclick="toggleTheme()">Switch Theme</button>
+    </header>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I am a 2nd year Bachelor of Engineering student in Computer Science and Engineering, passionate about building modern web interfaces and scalable applications.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills & Qualities</h2>
+      <ul>
+        <li>Self Learner</li>
+        <li>Problem Solving</li>
+        <li>C Language</li>
+        <li>Java</li>
+        <li>Frontend Development (HTML, CSS, JS)</li>
+      </ul>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>C Project:</strong> Banking System</li>
+        <li><strong>Web Projects:</strong>
+          <ul>
+            <li>Login Forms</li>
+            <li>TimeTables</li>
+            <li>Calculator</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Information</h2>
+      <p>Phone: 7249092427</p>
+      <p>Email: <a href="mailto:abhaycpatil2005@gmail.com">abhaycpatil2005@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/Abhay-techCode" target="_blank">Abhay-techCode</a></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+<hr>
+<h1>Thank You For Visiting......</h1>
+</body>
+</html><style>:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #007acc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --accent-color: #00bfff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+h2 {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}</style><script>function toggleTheme() {
+  const currentTheme = document.body.getAttribute("data-theme");
+  document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+}
+
+// Default to light theme
+document.body.setAttribute("data-theme", "light");</script>
